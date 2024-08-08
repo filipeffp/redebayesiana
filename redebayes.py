@@ -2,6 +2,8 @@ import pandas as pd
 from pgmpy.models import BayesianNetwork
 from pgmpy.estimators import BayesianEstimator
 from pgmpy.inference import VariableElimination
+import networkx as nx
+import matplotlib.pyplot as plt
 
 # Carregar os dados do arquivo CSV
 data = pd.read_csv('dadosAVC.csv')
@@ -41,3 +43,14 @@ print(query_result)
 print("\nExemplo de consulta: Probabilidade de 'AVC' dado que a pessoa tem diabetes e histórico familiar de AVC")
 query_result = inference.query(variables=['AVC'], evidence={'Diabetes': 'Sim', 'Historico_Familiar_AVC': 'Sim'})
 print(query_result)
+
+# Visualizar a rede bayesiana
+def plot_network(model):
+    G = nx.DiGraph()
+    G.add_edges_from(model.edges())
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_size=3000, node_color="skyblue", font_size=12, font_weight="bold", arrows=True)
+    plt.title("Rede Bayesian")
+    plt.show()
+
+plot_network(model)
