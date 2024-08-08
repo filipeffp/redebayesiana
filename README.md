@@ -75,6 +75,17 @@ Defina a estrutura da rede bayesiana especificando as relações entre as variá
         ('Estresse', 'Pressao_Arterial')
     ])
 
+    # Visualizar a rede bayesiana
+    def plot_network(model):
+        G = nx.DiGraph()
+        G.add_edges_from(model.edges())
+        pos = nx.spring_layout(G)
+        nx.draw(G, pos, with_labels=True, node_size=3500, node_color="skyblue", font_size=8, font_weight="bold", arrows=True)
+        plt.title("Rede Bayesian")
+        plt.show()
+    
+    plot_network(model)
+
 ### Passo 5: Ajustar os Parâmetros da Rede
 Ajuste os parâmetros da rede usando o estimador de máxima verossimilhança:
 
@@ -85,12 +96,12 @@ Use a eliminação de variáveis para realizar inferências na rede bayesiana:
 
     inference = VariableElimination(model)
 
-#### Exemplo de consulta: Probabilidade de AVC dado que a pressão arterial é alta
+#### Exemplo de consulta: Probabilidade de 'AVC' dado que a 'pressão arterial é alta':
     
     query_result = inference.query(variables=['AVC'], evidence={'Pressao_Arterial': 'Alta'})
     print(query_result)
 
-##### Exemplo de consulta: Probabilidade de AVC dado que a pessoa tem diabetes e histórico familiar de AVC
+##### Exemplo de consulta: Probabilidade de 'AVC' dado que a pessoa 'tem diabetes' e 'histórico familiar de AVC':
     
     query_result = inference.query(variables=['AVC'], evidence={'Diabetes': 'Sim', 'Historico_Familiar_AVC': 'Sim'})
     print(query_result)
