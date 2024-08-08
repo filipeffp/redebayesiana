@@ -1,7 +1,15 @@
-# Redes Bayesianas
-Repositório para seminário referente a Redes bayesianas
+### UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO
+### LICENCIATURA EM COMPUTAÇÃO - 2024.1
+### INTELIGÊNCIA ARTIFICIAL
+### PROFESSOR:
+- ANDRÉ NASCIMENTO
+### ALUNOS:
+- FILIPE FALCÃO
+- PEDRO HENRIQUE
+- TÚLIO FALCÃO
 
-## README: Predição de AVC com Redes Bayesianas
+
+## Predição de AVC com Redes Bayesianas
 
 ### Descrição
 Este script Python utiliza a biblioteca pgmpy para construir e treinar uma rede bayesiana com o objetivo de prever a ocorrência de um Acidente Vascular Cerebral (AVC). A rede é treinada utilizando dados fictícios de um arquivo CSV (dadosAVC.csv) e os parâmetros são estimados utilizando o método de máxima verossimilhança.
