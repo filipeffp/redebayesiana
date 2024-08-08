@@ -17,15 +17,15 @@ for column in data.columns:
 
 # Definir a estrutura da rede bayesiana
 model = BayesianNetwork([
+    ('Horas_Sono', 'Estresse'),
     ('Pressao_Arterial', 'AVC'),
     ('Diabetes', 'AVC'),
     ('Historico_Familiar_AVC', 'AVC'),
     ('Ausencia_Exercicios', 'AVC'),
     ('Ma_Alimentacao', 'AVC'),
-    ('Tabagismo', 'AVC'),
+    ('Tabagismo', 'Pressao_Arterial'),
     ('Consumo_Alcool', 'AVC'),
-    ('Horas_Sono', 'AVC'),
-    ('Estresse', 'AVC')
+    ('Estresse', 'Pressao_Arterial')
 ])
 
 # Ajustar os parâmetros da rede usando BayesianEstimator
@@ -49,7 +49,7 @@ def plot_network(model):
     G = nx.DiGraph()
     G.add_edges_from(model.edges())
     pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_size=3000, node_color="skyblue", font_size=12, font_weight="bold", arrows=True)
+    nx.draw(G, pos, with_labels=True, node_size=3500, node_color="skyblue", font_size=8, font_weight="bold", arrows=True)
     plt.title("Rede Bayesian")
     plt.show()
 
