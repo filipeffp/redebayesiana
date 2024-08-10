@@ -1,6 +1,7 @@
 ### UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO
 ### LICENCIATURA EM COMPUTAÇÃO - 2024.1
-### INTELIGÊNCIA ARTIFICIAL
+### DISCIPLINA:
+- INTELIGÊNCIA ARTIFICIAL
 ### PROFESSOR:
 - ANDRÉ NASCIMENTO
 ### ALUNOS:
@@ -11,8 +12,11 @@
 
 ## Predição de AVC com Redes Bayesianas
 
+### Objetivo
+Demonstrar o funcionamento de redes bayesianas para um problema de classificação.
+
 ### Descrição
-Este script Python [redebayes.py](redebayes.py) utiliza a biblioteca pgmpy para construir e treinar uma rede bayesiana com o objetivo de prever a ocorrência de um Acidente Vascular Cerebral (AVC). A rede é treinada utilizando dados fictícios de um arquivo CSV [dadosAVC.csv](dadosAVC.csv) e os parâmetros são estimados utilizando o método de máxima verossimilhança.
+Este script Python [redebayes.py](redebayes.py) utiliza a biblioteca pgmpy para construir e treinar uma rede bayesiana com o objetivo de prever a probabilidade de ocorrência de um Acidente Vascular Cerebral (AVC) dada a evidência de características prévias. A rede é treinada utilizando dados fictícios de um arquivo CSV [dadosAVC.csv](dadosAVC.csv) e os parâmetros são estimados utilizando o método de máxima verossimilhança.
 
 ### Requisitos
 - Python: Versão 3.x
