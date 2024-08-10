@@ -94,6 +94,10 @@ Defina a estrutura da rede bayesiana especificando as relações entre as variá
     
     plot_network(model)
 
+**Exibição gráfica da estrutura da rede descrita:**
+
+![rede bayesiana](rede_bayes.png)
+
 ### Passo 5: Ajustar os Parâmetros da Rede
 Ajuste os parâmetros da rede usando o estimador de máxima verossimilhança:
 
