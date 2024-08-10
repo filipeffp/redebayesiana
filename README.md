@@ -12,7 +12,7 @@
 ## Predição de AVC com Redes Bayesianas
 
 ### Descrição
-Este script Python utiliza a biblioteca pgmpy para construir e treinar uma rede bayesiana com o objetivo de prever a ocorrência de um Acidente Vascular Cerebral (AVC). A rede é treinada utilizando dados fictícios de um arquivo CSV (dadosAVC.csv) e os parâmetros são estimados utilizando o método de máxima verossimilhança.
+Este script Python [rede bayesiana](https://github.com/filipeffp/redebayesiana/tree/main) utiliza a biblioteca pgmpy para construir e treinar uma rede bayesiana com o objetivo de prever a ocorrência de um Acidente Vascular Cerebral (AVC). A rede é treinada utilizando dados fictícios de um arquivo CSV (dadosAVC.csv) e os parâmetros são estimados utilizando o método de máxima verossimilhança.
 
 ### Requisitos
 - Python: Versão 3.x
