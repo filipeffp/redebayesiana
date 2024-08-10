@@ -105,11 +105,34 @@ Use a eliminação de variáveis para realizar inferências na rede bayesiana:
     inference = VariableElimination(model)
 
 #### Exemplo de consulta: Probabilidade de 'AVC' dado que a 'pressão arterial é alta':
+Para isso fixamos o nosso alvo, AVC, e fixamos a evidência 'Pressao_Arterial', como "Alta':
     
     query_result = inference.query(variables=['AVC'], evidence={'Pressao_Arterial': 'Alta'})
     print(query_result)
+Saída:
+    
+    #Exemplo de consulta: Probabilidade de 'AVC' dado que a 'pressão arterial é alta'
+    +----------+------------+
+    | AVC      |   phi(AVC) |
+    +==========+============+
+    | AVC(Não) |     0.4998 |
+    +----------+------------+
+    | AVC(Sim) |     0.5002 |
+    +----------+------------+    
 
 ##### Exemplo de consulta: Probabilidade de 'AVC' dado que a pessoa 'tem diabetes' e 'histórico familiar de AVC':
-    
+Para isso fixamos o nosso alvo, AVC, e fixamos as evidências 'Diabetes', como "Alta'; 'Historico_Familiar_AVC', como 'Sim':
+
     query_result = inference.query(variables=['AVC'], evidence={'Diabetes': 'Sim', 'Historico_Familiar_AVC': 'Sim'})
     print(query_result)
+
+Saída:
+
+    Exemplo de consulta: Probabilidade de 'AVC' dado que a pessoa tem diabetes e histórico familiar de AVC
+    +----------+------------+
+    | AVC      |   phi(AVC) |
+    +==========+============+
+    | AVC(Não) |     0.4930 |
+    +----------+------------+
+    | AVC(Sim) |     0.5070 |
+    +----------+------------+
